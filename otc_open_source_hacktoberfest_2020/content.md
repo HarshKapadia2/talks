@@ -45,6 +45,8 @@ https://do.co/hacktoberconduct
 ### What is Hacktoberfest?
 It is an annual month long event held in October to promote Open Source in which people have to make four worthwhile PRs to earn prizes.
 
+Official site: https://hacktoberfest.digitalocean.com
+
 ### Why is it held?
 It helps promote Open Source by getting people interested, excited and passionate about it.
 
@@ -84,6 +86,8 @@ In general
 - Use repo [test2](https://github.com/saikiranjakkan/test2).
 - Don't forget to make a new branch for the PR.
 
+<img src="https://user-images.githubusercontent.com/50140864/95673781-7db0c180-0bc9-11eb-8146-46662427aa86.png" width=20% />
+
 ### Why is it a bad practice to open PRs from the master branch?
 - Use repo [test3](https://github.com/saikiranjakkan/test3).
 - Make PR from the master branch and then make another commit to master and push it to the forked remote. Show the new commit reflected in the original PR.
@@ -95,7 +99,13 @@ In general
 - Use repo [test1](https://github.com/saikiranjakkan/test1).
 - Issue 1 is a normal PR.
 - For the related issue (issue 2), make a branch off the issue 1 branch.
+
+<img src="https://user-images.githubusercontent.com/50140864/95673835-d5e7c380-0bc9-11eb-9cd9-6ccbb69065f6.png" width=20%/>
+
 - Show new addition to issue 1 and how that addidtion that is not reflected in the PR of issue 2 doesn't matter (as the merging is going to be in the order PR 1 and then PR 2).
+
+<img src="https://user-images.githubusercontent.com/50140864/95673863-f879dc80-0bc9-11eb-9e14-31a4a7bb497b.png" width=20%/>
+
 - [Example](https://github.com/HarshKapadia2/git_basics/issues/28)
 
 ## Open discussion and networking
