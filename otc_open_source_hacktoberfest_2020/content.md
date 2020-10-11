@@ -97,3 +97,6 @@ In general
 - For the related issue (issue 2), make a branch off the issue 1 branch.
 - Show new addition to issue 1 and how that addidtion that is not reflected in the PR of issue 2 doesn't matter (as the merging is going to be in the order PR 1 and then PR 2).
 - [Example](https://github.com/HarshKapadia2/git_basics/issues/28)
+
+## Open discussion and networking
+- Feedback form
