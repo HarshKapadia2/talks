@@ -6,4 +6,4 @@ October 11, 2020
 
 - [Our Tech Community (OTC)](https://otc.zulipchat.com)
 
-- [Event content](otc_open_source_hacktoberfest_2020/content.md)
+- [Event content](content.md)
