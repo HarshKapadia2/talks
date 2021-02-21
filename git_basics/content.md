@@ -2,10 +2,10 @@
 
 - What is VCS?
   - History
-
-- Why is it needed?
-  - Features
   - Bugs
+  - Features
+  - Open Source
+  - Exposure
 
 - What is Git?
   - DVCS
