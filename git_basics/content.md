@@ -18,57 +18,78 @@
     - show git_basics GH repo
     - Git != GitHub
 
-- General overview - show pic above git pull
+- General overview - show pic above `git pull`
   - Introduce adding (working dir & staging area) committing, pushing and pulling
 
-- git config
+- `git config`
 
-- git init
+- `git init`
 
-- show pic abv git add
+- show pic abv `git add`
 
-- git add
+- `git add`
   - .gitignore
 
-- git status
+- `git status`
 
-- git commit
+- `git commit`
   - Commit msg & descp
   - Short
   - Present imperative tense
   - Importance of small commits
 
-- git log
+- `git log`
   - SHA1
   - Name & e-mail
 
-- Make a few more commits & show git log again
+- Make a few more commits & show `git log` again
 
 - GitHub #1
   - Create new repo
 
-- get back to image abv git push
+- get back to image abv `git push`
 
-- git remote
+- `git remote`
 
-- git push
+- `git push`
 
 - GitHub #2
-  - overview, repo, issues, PR, insights (community (README, license, CoC, CONTRIBUTING.md), network), gist
+  - overview
+  - repo
+  - issues
+  - PR
+  - insights
+    - community
+      - README
+      - license
+      - CoC
+      - CONTRIBUTING.md
+    - network
+  -  Gist
+  -  CodeSpaces
+  -  GH Pages
+  -  GH Actions
 
 - make change in remote repo.
 
-- git pull
+- `git pull`
 
-- branches
-  - git branch, git switch, git checkout
-  - merging (3 way, fast fwd, --no-ff)
+- Branches
+  - Need
+  - Default branch
+    - What is it?
+    -  The `main` vs `master` issue.
+    -  `git config` command to change the default branch for GitHub.
+  - `git branch`, `git switch`, `git checkout`
+  
+- `git merge`
+  - 3 way, fast fwd, --no-ff
   - http://git-school.github.io/visualizing-git/#free
 
 - Make a PR
-  - fork, git clone
-  - https://github.com/SaikiranJakkan/test
+  - fork, `git clone`
+  - DON'T FORGET TO CREATE A NEW BRANCH, DOOFUS!
 
-- spirit of open source
+- Spirit of open source
 
-- gsoc, hacktoberfest
+- GSoC, Hacktoberfest or random contributions.
