@@ -28,7 +28,7 @@
 - show pic abv `git add`
 
 - `git add`
-  - .gitignore
+  - `.gitignore` file
 
 - `git status`
 
