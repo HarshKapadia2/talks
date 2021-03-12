@@ -11,3 +11,4 @@
   - [The original git_basics Git and GitHub crash course](https://www.youtube.com/watch?v=HF12-91iazM) (June 28, 2020)
   - [Git and GitHub crash course for Progate](https://www.youtube.com/watch?v=X8AoLwKQ13A&list=WL&index=226) (January 27, 2021)
   - Git and GitHub crash course for GirlScript Pathankot (February 21, 2021)
+  - Git and GitHub crash course + workshop for ACES MITADT (February 24 & 28, 2021)
