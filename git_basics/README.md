@@ -5,7 +5,8 @@
 - [Talk content](content.md)
 - git_basics
   - [Repo](https://github.com/HarshKapadia2/git_basics)
-  - [Web site](https://harshkapadia2.github.io/git_basics/)
+  - [PWA](https://harshkapadia2.github.io/git_basics/)
+  - [Play Store (TWA)](https://play.google.com/store/apps/details?id=com.harsh_kapadia.git_basics)
 - Previous talks on this
   - Git and GitHub crash course for ML Academy (June 22, 2020)
   - [The original git_basics Git and GitHub crash course](https://www.youtube.com/watch?v=HF12-91iazM) (June 28, 2020)
