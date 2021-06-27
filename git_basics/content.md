@@ -1,5 +1,11 @@
 # Event flow
 
+- Why should you learn Git and GitHub?
+  - Coding job
+  - Management/consulting
+  - Hackathon
+  - General collaboration
+
 - What is VCS?
   - History
   - Bugs
@@ -28,7 +34,6 @@
 - show pic abv `git add`
 
 - `git add`
-  - `.gitignore` file
 
 - `git status`
 
@@ -61,7 +66,7 @@
   - insights
     - community
       - README
-      - license
+      - LICENSE
       - CoC
       - CONTRIBUTING.md
     - network
@@ -81,15 +86,7 @@
     -  The `main` vs `master` issue.
     -  `git config` command to change the default branch for GitHub.
   - `git branch`, `git switch`, `git checkout`
-  
-- `git merge`
-  - 3 way, fast fwd, --no-ff
-  - http://git-school.github.io/visualizing-git/#free
 
 - Make a PR
   - fork, `git clone`
   - DON'T FORGET TO CREATE A NEW BRANCH, DOOFUS!
-
-- Spirit of open source
-
-- GSoC, Hacktoberfest or random contributions.
