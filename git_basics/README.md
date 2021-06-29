@@ -14,3 +14,4 @@
   - Git and GitHub crash course for GirlScript Pathankot (February 21, 2021)
   - [Git and GitHub crash course + workshop for ACES MITADT](https://www.youtube.com/watch?v=5rlHIOqPKWk) (February 24 & 28, 2021)
   - [Git and GitHub Workshop for TSEC CodeCell](https://www.youtube.com/watch?v=ArOKEf8nkfw) (March 21, 2021)
+  - [Git and GitHub Workshop for TSEC MAD Club](https://www.youtube.com/watch?v=J8-VT6_HB08) (June 27, 2021)
