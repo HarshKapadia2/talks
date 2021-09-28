@@ -1,7 +1,11 @@
-# talks
+# Talks
 
-A repo for the talks that I have given.
+The topics on which I have given talks.
 
-Talks
-- [git_basics - The basics that you need for Git & GitHub!](git_basics)
-- [Hacktoberfest 2020: 'Our Tech Community' Event](otc_open_source_hacktoberfest_2020)
+> Number of talks for each topic can be found in their respective sections.
+
+My talk topics
+
+- [Git Basics - The Basics of Git and GitHub!](git_basics)
+- [Git Internals - How Does Git Work!?](git_internals)
+- [Hacktoberfest 2020, Open Source, Branches and Pull Requests.](otc_open_source_hacktoberfest_2020)
