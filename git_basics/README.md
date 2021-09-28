@@ -1,4 +1,4 @@
-# git_basics
+# Git Basics
 
 - Two hour session.
 - Covers most of the basics of Git and GitHub.
