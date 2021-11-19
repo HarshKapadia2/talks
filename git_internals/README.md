@@ -1,7 +1,7 @@
 # Git Internals
 
 - Duration: 2 - 2.5 hrs
-- Covers the internal working of Git, mainly showcasing the `.git` directory and the `commit`, `tree` and `blob` objects.
+- Covers the internal working of Git, mainly showcasing the `.git` directory and the Directed Acyclic Graph that Git creates to connect `commit`, `tree` and `blob` objects.
 - Content
   - [Agenda](agenda.md)
   - [The `.git` Directory](https://harshkapadia2.github.io/git_basics/#_the_git_directory)
@@ -11,4 +11,4 @@
   - [PWA](https://harshkapadia2.github.io/git_basics/)
   - [Play Store (TWA)](https://play.google.com/store/apps/details?id=com.harsh_kapadia.git_basics)
 - Previous talks on this
-  - [Git Internals - How Does Git Work!?](https://www.youtube.com/watch?v=cwnj8N8t46s) (Oct 9, 2021)
+  - [Git Internals - How Does Git Work!?](https://www.youtube.com/watch?v=TZRS9llBBYU) (Oct 9, 2021)
