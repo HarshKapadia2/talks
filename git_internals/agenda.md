@@ -11,6 +11,13 @@
 
 ### The `.git` Directory
 
+#### Summary
+
+- Explore the most important files and directories in the `.git` directory.
+- Give reasons for the need of each file and directory and explain the structure of their contents.
+
+#### Details
+
 - Init a repo in dir A and explore the new `.git` dir.
 - Init a repo in dir B and add a file to show changes.
   - `index` file
@@ -25,6 +32,16 @@
 - QnA
 
 ### Git Objects
+
+#### Summary
+
+- Show and explain the contents of Blob, Commit and Tree Objects.
+- Through an example, create a Directed Acyclic graph to show how Git connects these three objects together to manage different versions of files.
+- Showcase how efficient Git is
+    - At handling different versions of files and renaming of files.
+    - In storing versions of huge files.
+
+#### Details
 
 - Inroduce Git Objects.
 - In the dir A repo, add a file to show changes.
@@ -80,4 +97,6 @@
 ### Conclusion
 
 - Git is amazing!
+- Go over all the topics covered.
+- Give a concise round up of all the things learnt and takeaways.
 - QnA
