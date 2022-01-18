@@ -10,5 +10,6 @@
   - [Repo](https://github.com/HarshKapadia2/git_basics)
   - [PWA](https://harshkapadia2.github.io/git_basics/)
   - [Play Store (TWA)](https://play.google.com/store/apps/details?id=com.harsh_kapadia.git_basics)
+- [Git Graph](https://harshkapadia2.github.io/git-graph)
 - Previous talks on this
   - [Git Internals - How Does Git Work!?](https://www.youtube.com/watch?v=TZRS9llBBYU) (Oct 9, 2021)
