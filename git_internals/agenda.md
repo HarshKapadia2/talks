@@ -6,22 +6,22 @@ In this session, we will be exploring the internals of Git and understanding how
 
 The following questions will be answered in this session
 
--   The `.git` directory
-    -   Which files and directories does the `.git` directory contain?
-    -   What is the use and structure of those files and directories?
--   Git Objects
-    -   What are Blob, Tree and Commit objects in Git?
-    -   What is the use and structure of these objects?
--   How does Git efficiently manage the following?
-    -   Different versions of files
-    -   Renaming of files
-    -   Directories
-    -   Changes to large files
+- The `.git` directory
+  - Which files and directories does the `.git` directory contain?
+  - What is the use and structure of those files and directories?
+- Git Objects
+  - What are Blob, Tree and Commit objects in Git?
+  - What is the use and structure of these objects?
+- How does Git efficiently manage the following?
+  - Different versions of files
+  - Renaming of files
+  - Directories
+  - Changes to large files
 
 > NOTE
 >
-> -   This session assumes a basic understanding of Git.
-> -   Concepts and tools such as Rebasing and Git LFS will not be covered.
+> - This session assumes a basic understanding of Git.
+> - Concepts and tools such as Rebasing and Git LFS will not be covered.
 
 ## Details
 
@@ -63,12 +63,12 @@ The following questions will be answered in this session
 - Show and explain the contents of Blob, Commit and Tree Objects.
 - Through an example, create a Directed Acyclic graph to show how Git connects these three objects together to manage different versions of files.
 - Showcase how efficient Git is
-    - At handling different versions of files and renaming of files.
-    - In storing versions of huge files.
+  - At handling different versions of files and renaming of files.
+  - In storing versions of huge files.
 
 #### Details
 
-- Inroduce Git Objects.
+- Introduce Git Objects.
 - In the dir A repo, add a file to show changes.
   - Get into the `objects` dir and then show the contents of the added `blob` file.
 - Add content to the added file.
