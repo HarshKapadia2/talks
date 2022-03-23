@@ -20,8 +20,8 @@
 
   - Git Basics for [TSEC CodeCell](https://www.tseccodecell.com) (March 21, 2022)
 
-    <img src="img/tsec-codecell-21-03-2022/1.jpg" width="33%" /> <img src="img/tsec-codecell-21-03-2022/2.jpg" width="33%" /> <img src="img/tsec-codecell-21-03-2022/3.jpg" width="33%" />
+    <img src="img/tsec-codecell-21-03-2022/1.jpg" width="33%" /><img src="img/tsec-codecell-21-03-2022/2.jpg" width="33%" /><img src="img/tsec-codecell-21-03-2022/3.jpg" width="33%" />
 
   - Git Basics for [TSEC CodeCell](https://www.tseccodecell.com) (March 22, 2022)
 
-    <img src="img/tsec-codecell-22-03-2022/1.jpg" width="33%" /> <img src="img/tsec-codecell-22-03-2022/2.jpg" width="33%" /> <img src="img/tsec-codecell-22-03-2022/3.jpg" width="33%" />
+    <img src="img/tsec-codecell-22-03-2022/1.jpg" width="33%" /><img src="img/tsec-codecell-22-03-2022/2.jpg" width="33%" /><img src="img/tsec-codecell-22-03-2022/3.jpg" width="33%" />
