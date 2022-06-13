@@ -1,6 +1,6 @@
 # Team Attitude for Organising a Hackathon
 
-- Overcoming attitude problems faced by hackathon organising teams.
-- Duration: 5 - 10 mins
-- [Talk content](https://blog.harshkapadia.me/2022/hackathon-team-attitude)
-- Slide deck: TBA
+-   Overcoming attitude problems faced by hackathon organising teams.
+-   Duration: 5 - 10 mins
+-   [Talk content](https://blog.harshkapadia.me/2022/hackathon-team-attitude)
+-   Slide deck: TBA
