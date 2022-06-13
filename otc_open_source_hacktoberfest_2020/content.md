@@ -56,7 +56,7 @@ It is not about the T-shirt. Spam PRs for the T-shirt and promotional spam on ht
 ### What are the Hacktoberfest 2020 rules?
 [Rules](https://hacktoberfest.digitalocean.com/hacktoberfest-update)
 
-<img src="https://user-images.githubusercontent.com/50140864/95671899-92855900-0bb9-11eb-8a82-dc51f1321840.png" width=50% />
+<img src="img/1.png" width="50%" />
 
 ### What types of PRs should you open?
 For Hacktoberfest
@@ -86,7 +86,7 @@ In general
 - Use repo [test2](https://github.com/saikiranjakkan/test2).
 - Don't forget to make a new branch for the PR.
 
-<img src="https://user-images.githubusercontent.com/50140864/95673781-7db0c180-0bc9-11eb-8146-46662427aa86.png" width=20% />
+<img src="img/2.png" width="20%" />
 
 ### Why is it a bad practice to open PRs from the master branch?
 - Use repo [test3](https://github.com/saikiranjakkan/test3).
@@ -100,11 +100,11 @@ In general
 - Issue 1 is a normal PR.
 - For the related issue (issue 2), make a branch off the issue 1 branch.
 
-<img src="https://user-images.githubusercontent.com/50140864/95673835-d5e7c380-0bc9-11eb-9cd9-6ccbb69065f6.png" width=20%/>
+<img src="img/3.png" width="20%" />
 
-- Show new addition to issue 1 and how that addidtion that is not reflected in the PR of issue 2 doesn't matter (as the merging is going to be in the order PR 1 and then PR 2).
+- Show new addition to issue 1 and how that addition that is not reflected in the PR of issue 2 doesn't matter (as the merging is going to be in the order PR 1 and then PR 2).
 
-<img src="https://user-images.githubusercontent.com/50140864/95673863-f879dc80-0bc9-11eb-9e14-31a4a7bb497b.png" width=20%/>
+<img src="img/4.png" width="20%" />
 
 - [Example](https://github.com/HarshKapadia2/git_basics/issues/28)
 
