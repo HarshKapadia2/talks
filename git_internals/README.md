@@ -1,7 +1,8 @@
 # Git Internals
 
--   Duration: 2 - 2.5 hrs
--   Covers the internals of Git, mainly showcasing the `.git` directory and the Directed Acyclic Graph that Git creates to connect Commit, Tree and Blob objects internally.
+-   General duration: 2 - 2.5 hrs
+-   Covers the internals of Git, mainly explaining the need of specific directories and files in the `.git` directory and showcasing the Directed Acyclic Graph that Git creates to connect Commit, Tree and Blob objects internally.
+    -   Packfiles are also touched upon.
 -   Content
     -   [Agenda](agenda.md)
     -   [Git Internals](https://git.harshkapadia.me)

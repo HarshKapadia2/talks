@@ -16,7 +16,7 @@ The following questions will be answered in this session
     -   Different versions of files
     -   Renaming of files
     -   Directories
-    -   Changes to large files
+    -   Changes to large files (Packfiles)
 
 > NOTE
 >
