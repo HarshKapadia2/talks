@@ -3,6 +3,7 @@
 -   General duration: 2 - 2.5 hrs
 -   Covers the internals of Git, mainly explaining the need of specific directories and files in the `.git` directory and showcasing the Directed Acyclic Graph that Git creates to connect Commit, Tree and Blob objects internally.
     -   Packfiles are also touched upon.
+-   Why do millions of people use Git to version their code? It's because of its features, convenience, structure and design! This talk explores what we can learn from the structure and design of Git to write better software and use these principles in practice to efficiently manage, store, transfer and query data. We will broadly talk about Packfiles and efficiently handling CRUD operations on files.
 -   Content
     -   [Agenda](agenda.md)
     -   [Git Internals](https://git.harshkapadia.me)

@@ -4,6 +4,8 @@ In this session, we will be exploring the internals of Git and understanding how
 
 ## Agenda
 
+Why do millions of people use Git to version their code? It's because of its features, convenience, structure and design! This talk explores what we can learn from the structure and design of Git to write better software and use these principles in practice to efficiently manage, store, transfer and query data. We will broadly talk about Packfiles and efficiently handling CRUD operations on files.
+
 The following questions will be answered in this session
 
 -   The `.git` directory
