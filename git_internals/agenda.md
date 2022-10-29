@@ -55,7 +55,7 @@ The following questions will be answered in this session
     -   `COMMIT_EDITMSG` file
     -   `HEAD` file
     -   `refs/heads` dir
--   Show remaining files using ['The `.git` Directory Contents' section](https://harshkapadia2.github.io/git_basics/#_the_git_directory_contents) as ref, from the `git_basics` local repo or any other repo.
+-   Show remaining files using ['The `.git` Directory Contents' section](https://git.harshkapadia.me/#_the_git_directory_contents) of Git Internals as ref, from the `git_basics` local repo or any other repo.
 -   QnA
 
 ### Git Objects
@@ -127,3 +127,38 @@ The following questions will be answered in this session
 -   Go over all the topics covered.
 -   Give a concise round up of all the things learnt and takeaways.
 -   QnA
+
+## The Short Version
+
+> This version should take around 1 hour to complete.
+
+-   What is Git?
+-   What is going to be done?
+    -   No need to write or note anything.
+-   Why is it imp to know the internals?
+    -   Understanding of what is going on improves usage.
+    -   Improves logic and system design understanding.
+-   Prerequisite basic commands/concepts (with picture)
+    -   Adding/Staging
+    -   Committing
+    -   Branching
+-   Init repo
+-   Show the contents of the `.git/objects` directory.
+-   Create two files, add both files and make a single commit.
+-   Use Git Graph on this repo.
+-   Show the contents of the `.git/objects` directory again.
+-   Show raw file contents of Commit (using `zlib` and then Git Graph), Tree and Blob objects.
+-   Talk about `HEAD`.
+-   Modify one of the two file and see how the graph changes.
+-   Create a directory, create a file in it, add it and then commit it.
+-   Use Git Graph on this repo.
+-   \[OPTIONAL\] Branching
+    -   Create a new branch and make a few commits on it. Switch on Git Graph and show how head is working.
+-   \[OPTIONAL\] Concept of Packfiles
+    -   All objs in one file
+    -   Only new stored and old diffed
+-   Learnings
+    -   Some understanding of how Git works to improve usage.
+    -   Understanding of how software is designed with efficiency in mind, to optimize for storage and bandwidth.
+-   Urge people to look more into software and even Git.
+    -   Show the `.git` directory files using ['The `.git` Directory Contents' section](https://git.harshkapadia.me/#_the_git_directory_contents) of Git Internals.
