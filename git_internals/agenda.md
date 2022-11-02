@@ -1,5 +1,22 @@
 # Git Internals Agenda
 
+## Table of Contents
+
+-   [Introduction](#introduction)
+-   [Agenda](#agenda)
+-   [Details](#details)
+    -   [Introduction](#introduction-1)
+    -   [The `.git` Directory](#the-git-directory)
+        -   [Summary](#summary)
+        -   [Details](#details)
+    -   [Git Objects](#git-objects)
+        -   [Summary](#summary-1)
+        -   [Details](#details-1)
+    -   [Conclusion](#conclusion)
+-   [The Short Version](#the-short-version)
+
+## Introduction
+
 In this session, we will be exploring the internals of Git and understanding how it goes about efficiently versioning software.
 
 ## Agenda
