@@ -12,6 +12,7 @@
     -   [Slide Deck](https://docs.google.com/presentation/d/1Ri9HMkvFRVg_ICHQBpLHEoQIcm6ybs75-nJH7fZQYNs/edit?usp=sharing)
 -   Previous **offline (in-person)** talks on this
 
+    -   [BostonHacks 2022](https://bostonhacks.io) at [Boston University](https://bu.edu) (Nov 12, 2022)
     -   [TechTogether Boston 2022](https://techtogether.io/techtogetherboston) at [Boston University](https://bu.edu) (Oct 29, 2022)
 
         <img src="img/tech-together-boston-2022/1.jpg" width="50%" loading="lazy" /><img src="img/tech-together-boston-2022/2.jpg" width="50%" loading="lazy" />
