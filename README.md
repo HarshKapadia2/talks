@@ -17,9 +17,10 @@ Feel free to [reach out for a talk or interview](https://links.harshkapadia.me)!
 
 ## Interviews
 
--   [Noobcast - My Thoughts on Web Development, OTC, GCE, Internships, etc.](https://www.youtube.com/watch?v=its-ftqt0UI)
--   [How to Become a GitHub Campus Expert (GCE).](https://www.youtube.com/watch?v=iVhRtgyCZhc)
+-   [Dive Into Communities - My views on Tech communities and related topics](https://www.youtube.com/watch?v=RBJAE2W5JVA) (Nov 13, 2022)
+-   [Noobcast - My Thoughts on Web Development, OTC, GCE, Internships, etc.](https://www.youtube.com/watch?v=its-ftqt0UI) (May 15, 2022)
+-   [How to Become a GitHub Campus Expert (GCE).](https://www.youtube.com/watch?v=iVhRtgyCZhc) (Jan 7, 2022)
 
 ## Misc
 
--   [TSEC Show and Tell - Showcasing Hackathon Projects!](https://www.youtube.com/watch?v=0dYJ3GJwcBo)
+-   [TSEC Show and Tell - Showcasing Hackathon Projects!](https://www.youtube.com/watch?v=0dYJ3GJwcBo) (Jul 12, 2020)
