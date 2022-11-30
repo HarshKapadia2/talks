@@ -12,10 +12,13 @@
     -   [Slide Deck](https://docs.google.com/presentation/d/1Ri9HMkvFRVg_ICHQBpLHEoQIcm6ybs75-nJH7fZQYNs/edit?usp=sharing)
 -   Previous **offline (in-person)** talks on this
 
-    -   [BostonHacks 2022](https://bostonhacks.io) at [Boston University](https://bu.edu) (Nov 12, 2022)
+    -   [BostonHacks 2022](https://bostonhacks.io) at [Boston University](https://bu.edu) ([Short clip](https://www.youtube.com/watch?v=1cq788BybGc)) (Nov 12, 2022)
+
+        <img src="img/bostonhacks-2022/1.png" width="50%" loading="lazy" /><img src="img/bostonhacks-2022/2.png" width="50%" loading="lazy" />
+
     -   [TechTogether Boston 2022](https://techtogether.io/techtogetherboston) at [Boston University](https://bu.edu) (Oct 29, 2022)
 
-        <img src="img/tech-together-boston-2022/1.jpg" width="50%" loading="lazy" /><img src="img/tech-together-boston-2022/2.jpg" width="50%" loading="lazy" />
+        <img src="img/techtogether-boston-2022/1.jpg" width="50%" loading="lazy" /><img src="img/techtogether-boston-2022/2.jpg" width="50%" loading="lazy" />
 
 -   Previous **online** talks on this
     -   [Internals of Git for Sudhanshu Yadav's 'The Internals' meetup](https://github.com/The-Internals/Internals-of-git) (Jan 22, 2022)
