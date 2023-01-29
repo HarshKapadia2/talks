@@ -2,7 +2,7 @@
 
 About Harsh Kapadia: [harshkapadia.me](https://harshkapadia.me)
 
-Feel free to [reach out for a talk or interview](https://links.harshkapadia.me)!
+Feel free to [reach out](https://links.harshkapadia.me) for talks, interviews, panels, hosting, etc.!
 
 ## Previous Talks
 
@@ -27,6 +27,10 @@ Feel free to [reach out for a talk or interview](https://links.harshkapadia.me)!
 
     <img src="panels/gdg-devfest-boston-2023-28-01-2023/img/1.jpg" width="50%" />
 
-## Misc
+## Hosting
 
+-   Weekly [OTC CatchUp](https://catchup.ourtech.community) sessions (Oct 2020 - present)
+-   [Chirag Nayyar on Getting Started with Cloud](https://www.youtube.com/watch?v=TRjOhBSZKY0) ([Summary](https://blog.harshkapadia.me/2020/chirag-nayyar)) (Aug 22, 2020)
 -   [TSEC Show and Tell - Showcasing Hackathon Projects!](https://www.youtube.com/watch?v=0dYJ3GJwcBo) (Jul 12, 2020)
+-   [The Ali Mustufa Shaikh Interview](https://www.youtube.com/watch?v=RfkDB-zCmB8) ([Summary](https://blog.harshkapadia.me/2020/ali-mustufa-shaikh)) (Jul 8, 2020)
+-   [The Jason Mayes Interview](https://www.youtube.com/watch?v=tbc-Rvfg2nE) ([Summary](https://blog.harshkapadia.me/2020/jason-mayes)) (Jul 1, 2020)
