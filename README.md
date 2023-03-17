@@ -12,6 +12,7 @@ Feel free to [reach out](https://links.harshkapadia.me) for talks, interviews, p
 
 ## Planned Talks
 
+-   [MAC and IP Routing](mac-and-ip-routing)
 -   [Working with CORS](cors)
 -   [Team Attitude for Organising a Hackathon](hackathon-team-attitude)
 
