@@ -23,6 +23,8 @@
 
 It is not intuitive to understand why MAC addresses are required for routing when IP addresses exist and how both MAC addresses and IP addresses work together to get packets/frames to their final destinations. This piece attempts to demystify this.
 
+> [Slide deck](https://docs.google.com/presentation/d/1DLoSxfzwURuZvKNoeyKGQUurs_qhCmETu-E0EOzt6xM/edit?usp=sharing)
+
 ## OSI Layers
 
 <p align="center">
