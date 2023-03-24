@@ -9,6 +9,7 @@
 -   [IP Routing](#ip-routing)
 -   [MAC Address Requirement](#mac-address-requirement)
 -   [MAC Routing](#mac-routing)
+-   [Simplified Typical Frame Structure](#simplified-typical-frame-structure)
 -   [Routing Example](#routing-example)
     -   [Network Topology](#network-topology)
     -   [IP Configuration](#ip-configuration)
@@ -30,7 +31,7 @@ It is not intuitive to understand why MAC addresses are required for routing whe
 ## OSI Layers
 
 <p align="center">
-    <img src="img/talk-content/osi-vs-tcp-ip-layers.webp" alt="OSI Layers vs TCP/IP Layers" width="60%" loading="lazy" />
+    <img src="img/talk-content/osi-vs-tcp-ip-layers.webp" alt="OSI Layers vs TCP/IP Layers" width="80%" loading="lazy" />
 </p>
 
 -   [OSI Layers](https://networking.harshkapadia.me/osi-layers): ARP is usually considered as a part of the Data Link Layer, but sometimes also a part of the Network Layer.
@@ -38,7 +39,7 @@ It is not intuitive to understand why MAC addresses are required for routing whe
 ## Internet Topology
 
 <p align="center">
-    <img src="img/talk-content/internet-topology.png" alt="Internet Topology" width="60%" loading="lazy" />
+    <img src="img/talk-content/internet-topology.png" alt="Internet Topology" loading="lazy" />
     <br />
     <sub>
         <a href="http://www.tcpipguide.com/free/t_BGPTopologySpeakersBorderRoutersandNeighborRelatio-2.htm" target="_blank" rel="noreferrer">Image credits</a>
@@ -90,6 +91,12 @@ If IP addresses can help identify and route to a host on the internet, then why 
     -   How does one get/know the IP address of the next hop? It is usually manually configured in the IP routing table. The [Routing Example](#routing-example) section below covers this.
     -   Is ARP secure? Unfortunately not and is vulnerable to attacks like [ARP Spoofing](https://networking.harshkapadia.me/files/bu-cas-cs-558/assignments/e-mail-arp/index.html#_arp_spoofing).
 
+## Simplified Typical Frame Structure
+
+<p align="center">
+    <img src="img/talk-content/simplified-typical-frame-structure.png" alt="Simplified Typical Frame Structure" loading="lazy" />
+</p>
+
 ## Routing Example
 
 Understanding how MAC and IP routing work together with an example, with the **goal of routing packets from `node-a` to `node-c`**.
@@ -97,7 +104,7 @@ Understanding how MAC and IP routing work together with an example, with the **g
 ### Network Topology
 
 <p align="center">
-    <img src="img/talk-content/network-topology.png" alt="Demo network topology" width="80%" loading="lazy" />
+    <img src="img/talk-content/network-topology.png" alt="Demo network topology" loading="lazy" />
 </p>
 
 The image above shows a network topology with three nodes/clients (`node-a`, `node-b` and `node-c`), three routers (`router-1`, `router-2` and `router-3`) and four subnets (`net-1`, `net-2`, `net-3` and `net-4`).
@@ -155,6 +162,11 @@ The image above shows a network topology with three nodes/clients (`node-a`, `no
         -   Dst IP: `10.0.3.3` (`node-c`)
         -   Src MAC: `AA:AA:AA:AA:AA:AA` (`node-a`) (Randomly chosen MAC address for illustration purposes.)
         -   Dst MAC: **?? (??)**
+
+<p align="center">
+    <img src="img/talk-content/frame-1.png" alt="Demo frame" loading="lazy" />
+</p>
+
 -   As per `node-a`'s IP configuration, anything in the `10.0.0.0/16` destination range should go to `10.0.1.2` (`router-1`).
 -   To send the packet to `10.0.1.2` (`router-1`), we need its MAC address to put in the ethernet frame.
     -   Current state
@@ -173,7 +185,12 @@ The image above shows a network topology with three nodes/clients (`node-a`, `no
         -   Src MAC: `AA:AA:AA:AA:AA:AA` (`node-a`)
         -   Dst MAC: **`11:11:11:11:11:11`** (`router-1`) (Randomly chosen MAC address for illustration purposes.)
     -   `node-a` will also cache this MAC address of `router-1` that it received for some time, so that a few packets after this one will not have to make ARP Requests every time. (Efficient, but is vulnerable to an ARP Cache Poisoning Attack)
--   Now that all five fields are known, `node-a` can send the packet to `router-1`.
+
+<p align="center">
+    <img src="img/talk-content/frame-2.png" alt="Demo frame" loading="lazy" />
+</p>
+
+-   Now that all five fields are known, `node-a` can send the frame to `router-1`.
 
 ### At `router-1`
 
@@ -184,6 +201,11 @@ The image above shows a network topology with three nodes/clients (`node-a`, `no
     -   Dst IP: `10.0.3.3` (`node-c`)
     -   Src MAC: `AA:AA:AA:AA:AA:AA` (`node-a`)
     -   Dst MAC: `11:11:11:11:11:11` (`router-1`)
+
+<p align="center">
+    <img src="img/talk-content/frame-2.png" alt="Demo frame" loading="lazy" />
+</p>
+
 -   Looking at the destination MAC address, `router-1` realises that the Ethernet frame is intended for it, so it accepts it.
 -   Further going up the OSI or TCP/IP model layers, `router-1` (`10.0.1.2` or `10.0.4.2`) looks at the destination IP address and realises that the payload is not destined/meant for it and is not in its subnets (`net-1` and `net-4`), but on checking its IP routing table, it will find that anything in the `10.0.3.0/24` destination range should go to `10.0.4.4` (`router-3`).
     -   Current state
@@ -193,6 +215,11 @@ The image above shows a network topology with three nodes/clients (`node-a`, `no
         -   Dst IP: `10.0.3.3` (`node-c`)
         -   Src MAC: **`11:11:11:11:11:11` (`router-1`)**
         -   Dst MAC: **?? (`router-3`)**
+
+<p align="center">
+    <img src="img/talk-content/frame-3.png" alt="Demo frame" loading="lazy" />
+</p>
+
 -   But now to route the data to `10.0.4.4` (`router-3`), `router-1` needs to know `router-3`'s MAC address.
 -   As seen in `node-a`, an ARP Request message is broadcasted in the entire `net-4` subnet (as the IP being requested is in `net-4` and not `net-1`) asking for the MAC address of `10.0.4.4` (`router-3`). Hopefully, the real `router-3` is the one who sends an ARP Reply with its MAC address.
     -   Final state
@@ -204,7 +231,12 @@ The image above shows a network topology with three nodes/clients (`node-a`, `no
         -   Dst MAC: **`33:33:33:33:33:33`** (`router-3`) (Randomly chosen MAC address for illustration purposes.)
     -   `router-1` will also cache this MAC address of `router-3` that it received for some time, so that a few packets after this one will not have to make ARP Requests every time.
         -   Side note: `router-1` will also have the cache of `node-a`'s MAC address for some time after it was sent in the ARP Request that `node-a` had sent, as the ARP Request from `node-a` was actually intended for `router-1` and the router had to send the ARP Reply back to `node-a`.
--   Now that all five fields are known, `router-1` can send the packet to `router-3`.
+
+<p align="center">
+    <img src="img/talk-content/frame-4.png" alt="Demo frame" loading="lazy" />
+</p>
+
+-   Now that all five fields are known, `router-1` can send the frame to `router-3`.
 
 ### At `router-3`
 
@@ -215,6 +247,11 @@ The image above shows a network topology with three nodes/clients (`node-a`, `no
     -   Dst IP: `10.0.3.3` (`node-c`)
     -   Src MAC: `11:11:11:11:11:11` (`router-1`)
     -   Dst MAC: `33:33:33:33:33:33` (`router-3`)
+
+<p align="center">
+    <img src="img/talk-content/frame-4.png" alt="Demo frame" loading="lazy" />
+</p>
+
 -   Looking at the destination MAC address, `router-3` realises that the Ethernet frame is intended for it, so it accepts it.
 -   As in `router-1`, on further going up the OSI or TCP/IP model layers, `router-3` (`10.0.3.2` or `10.0.4.4`) looks at the destination IP address and realises that the payload is not destined/meant for it, but is intended for a host in one of its subnets (`net-3`) out of the two subnets it is a part of (`net-3` and `net-4`) and there is no rule for that IP (`10.0.3.3`) in the IP table (so it doesn't need to do some special routing), so it can directly broadcast an ARP Request in `net-3` for the MAC address of `10.0.3.3` (`node-c`).
     -   Current state
@@ -224,6 +261,11 @@ The image above shows a network topology with three nodes/clients (`node-a`, `no
         -   Dst IP: `10.0.3.3` (`node-c`)
         -   Src MAC: **`33:33:33:33:33:33` (`router-3`)**
         -   Dst MAC: **?? (`node-c`)**
+
+<p align="center">
+    <img src="img/talk-content/frame-5.png" alt="Demo frame" loading="lazy" />
+</p>
+
 -   As discussed in the previous point, an ARP Request message is broadcasted in the entire `net-3` subnet asking for the MAC address of `10.0.3.3` (`node-c`). Hopefully, the real `node-c` is the one who sends an ARP Reply with its MAC address.
     -   Final state
         -   Src port: 5000
@@ -234,7 +276,12 @@ The image above shows a network topology with three nodes/clients (`node-a`, `no
         -   Dst MAC: **`CC:CC:CC:CC:CC:CC`** (`node-c`) (Randomly chosen MAC address for illustration purposes.)
     -   `router-3` will also cache this MAC address of `node-c` that it received for some time, so that a few packets after this one will not have to make ARP Requests every time.
         -   Side note: As before, `router-3` will also have the cache of `router-1`'s MAC address for some time.
--   Now that all five fields are known, `router-3` can send the packet to `node-c`.
+
+<p align="center">
+    <img src="img/talk-content/frame-6.png" alt="Demo frame" loading="lazy" />
+</p>
+
+-   Now that all five fields are known, `router-3` can send the frame to `node-c`.
 
 ### At `node-c`
 
@@ -245,6 +292,11 @@ The image above shows a network topology with three nodes/clients (`node-a`, `no
     -   Dst IP: `10.0.3.3` (`node-c`)
     -   Src MAC: `33:33:33:33:33:33` (`router-3`)
     -   Dst MAC: `CC:CC:CC:CC:CC:CC` (`node-c`)
+
+<p align="center">
+    <img src="img/talk-content/frame-6.png" alt="Demo frame" loading="lazy" />
+</p>
+
 -   Looking at the destination MAC address, `node-c` realises that the Ethernet frame is intended for it, so it accepts it.
 -   As before, on further going up the OSI or TCP/IP model layers, `node-c` (`10.0.3.3`) looks at the destination IP address and realises that the payload is destined/meant for it, so it accepts the packet and sends it to higher levels for further processing.
     -   Side note: As before, `node-c` will have the cache of `router-3`'s MAC address for some time.
@@ -261,6 +313,10 @@ The image above shows a network topology with three nodes/clients (`node-a`, `no
         -   Src MAC: `CC:CC:CC:CC:CC:CC` (`node-c`)
         -   Dst MAC: `33:33:33:33:33:33` (`router-3`)
 
+<p align="center">
+    <img src="img/talk-content/frame-7.png" alt="Demo frame" loading="lazy" />
+</p>
+
 ## Demonstration
 
 Please follow the instructions in the repository below.
@@ -270,7 +326,7 @@ Repository: [github.com/HarshKapadia2/mac-ip-routing](https://github.com/HarshKa
 ## Distributing IP Routing Information
 
 <p align="center">
-    <img src="img/talk-content/internet-topology.png" alt="Internet Topology" width="60%" loading="lazy" />
+    <img src="img/talk-content/internet-topology.png" alt="Internet Topology" loading="lazy" />
     <br />
     <sub>
         <a href="http://www.tcpipguide.com/free/t_BGPTopologySpeakersBorderRoutersandNeighborRelatio-2.htm" target="_blank" rel="noreferrer">Image credits</a>
