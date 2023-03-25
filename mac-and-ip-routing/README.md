@@ -6,5 +6,5 @@
 -   [Talk content](content.md)
 -   [Slide deck](https://docs.google.com/presentation/d/1DLoSxfzwURuZvKNoeyKGQUurs_qhCmETu-E0EOzt6xM/edit?usp=sharing)
 -   Demo: [github.com/HarshKapadia2/mac-ip-routing](https://github.com/HarshKapadia2/mac-ip-routing)
--   Online talks on this
-    -   Routing using IP and MAC Addresses at [OTC Talks #3](https://talks.ourtech.community/3) (March 25, 2023)
+-   Previous online talks on this
+    -   'Routing using IP and MAC Addresses' at [OTC Talks #3](https://talks.ourtech.community/3) (March 25, 2023)
