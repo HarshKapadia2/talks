@@ -139,15 +139,13 @@ The image above shows a network topology with three nodes/clients (`node-a`, `no
 -   Router 2 IP configuration
 
     ```shell
-    $ ip route add 10.0.1.0/24 via 10.0.4.2 # To Router 1
-    $ ip route add 10.0.3.0/24 via 10.0.4.4 # To Router 3
+    $ ip route add 10.0.0.0/16 via 10.0.4.2 # To Router 1
     ```
 
 -   Router 3 IP configuration
 
     ```shell
-    $ ip route add 10.0.1.0/24 via 10.0.4.2 # To Router 1
-    $ ip route add 10.0.2.0/24 via 10.0.4.3 # To Router 2
+    $ ip route add 10.0.0.0/16 via 10.0.4.2 # To Router 1
     ```
 
 ### At `node-a`
