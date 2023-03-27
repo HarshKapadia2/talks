@@ -6,13 +6,13 @@ Feel free to [reach out](https://links.harshkapadia.me) for talks, interviews, p
 
 ## Previous Talks
 
+-   [MAC and IP Routing](mac-and-ip-routing)
 -   [Git Internals - How Does Git Work!?](git_internals)
 -   [Git Basics - The Basics of Git and GitHub!](git_basics)
 -   [Hacktoberfest 2020, Open Source, Branches and Pull Requests.](otc_open_source_hacktoberfest_2020)
 
 ## Planned Talks
 
--   [MAC and IP Routing](mac-and-ip-routing)
 -   [Working with CORS](cors)
 -   [Team Attitude for Organising a Hackathon](hackathon-team-attitude)
 
