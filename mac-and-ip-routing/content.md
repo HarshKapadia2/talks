@@ -88,8 +88,23 @@ If IP addresses can help identify and route to a host on the internet, then why 
 
 -   Unless manually configured (in ARP tables), machines don't know the MAC addresses of the next hop machine.
 -   The [Address Resolution Protocol (ARP)](https://en.wikipedia.org/wiki/Address_Resolution_Protocol) helps get us the MAC address given the IP address of the required next hop.
+    -   ARP is a request and response protocol, where a machine broadcasts a request to all members in the subnet to get a MAC address for a particular IP address. Only the machine with the requested IP address responds to the requesting machine with its MAC address.
     -   How does one get/know the IP address of the next hop? It is usually manually configured in the IP routing table. The [Routing Example](#routing-example) section below covers this.
     -   Is ARP secure? Unfortunately not and is vulnerable to attacks like [ARP Spoofing](https://networking.harshkapadia.me/files/bu-cas-cs-558/assignments/e-mail-arp/index.html#_arp_spoofing).
+
+> Why can't we have constant/hard coded MAC addresses?
+>
+> NOTE: Remember that MAC addresses are manufacturer dependent and so are baked into a device.
+>
+> We could hard code MAC addresses and do away with ARP, but devices keep joining and leaving networks, leading to too many configuration overheads if MAC addresses were hard coded. Automatic initial MAC address discovery would be difficult without ARP as well and would have to be done manually for a device to be able to join the network.
+>
+> Also, the same IP address can have differences devices using it at various times.
+>
+> For example, a router will usually be available at the IP address `192.168.0.1` on a local network and it will have its own MAC address. If that router breaks down and needs to be replaced, the new router will be configured at the same IP address, but it will have a different MAC address. Hard coding the MAC address would lead to users having to manually re-configure it, which is not that great and adds complexity for non-technical users.
+>
+> Hard coding MAC addresses thus adds manual configuration complexities and with the frequency at which devices join and leave networks, it probably isn't a good idea to hard code MAC addresses. So ARP is a good idea.
+>
+> A parallel can be drawn from [IP addresses](https://networking.harshkapadia.me/ip), domain names and [DNS](https://networking.harshkapadia.me/dns), because domain names are not only easy to remember, but if IP addresses for a domain change, users don't have to care about it as they just use the domain name and rely on DNS to translate it to an IP address. Thus, it makes sense to have domain names rather than just using IP addresses.
 
 ## Simplified Typical Frame Structure
 
