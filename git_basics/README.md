@@ -2,10 +2,11 @@
 
 -   Two hour session.
 -   Covers most of the basics of Git and GitHub.
+-   Whether one is a student, an Open Source contributor, a Tech professional or at a Tech managerial position, Git and GitHub is something that will be required in some capacity. Thus, understanding the basic concepts and jargon of Git are helpful, no matter which field of Tech one is a part of. This talk/workshop will help one understand the most commonly used Git commands like `git commit`, `git add`, `git pull`, `git push`, `git log`, `git status`, `git branch` and more.
 -   [Talk content](content.md)
 -   git_basics
     -   [Repo](https://github.com/HarshKapadia2/git_basics)
-    -   [PWA](https://harshkapadia2.github.io/git_basics/)
+    -   [PWA](https://harshkapadia2.github.io/git_basics)
     -   [Play Store (TWA)](https://play.google.com/store/apps/details?id=com.harsh_kapadia.git_basics)
 -   Previous **online** talks on this
     -   [Git Basics for GDSC TSEC](https://www.youtube.com/watch?v=OmZHKCg7qf4) (Oct 8, 2021)
