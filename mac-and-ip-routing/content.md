@@ -353,3 +353,4 @@ Repository: [github.com/HarshKapadia2/mac-ip-routing](https://github.com/HarshKa
 ## Resources
 
 -   [networking.harshkapadia.me](https://networking.harshkapadia.me)
+-   [Ethernet (50th Birthday)](https://www.youtube.com/watch?v=TkOVgkcrvbg)
