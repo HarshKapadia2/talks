@@ -73,7 +73,10 @@
 
     -   overview
     -   repo
-    -   issues
+    -   Issues
+        -   [Taking up a pre-existing issue](https://github.com/OurTechCommunity/catchup/issues/146)
+        -   [Suggesting a change](https://github.com/HarshKapadia2/git_basics/issues/78)
+        -   Labels
     -   PR
     -   insights
         -   community
@@ -99,11 +102,15 @@
         -   The `main` vs `master` issue.
         -   `git config` command to change the default branch for GitHub.
     -   `git branch`, `git switch`, `git checkout`
+    -   `git merge`
 
 -   Make a PR
 
     -   fork, `git clone`
     -   DON'T FORGET TO CREATE A NEW BRANCH, DOOFUS!
+    -   Examples
+        -   [github.com/OurTechCommunity/catchup/pull/159](https://github.com/OurTechCommunity/catchup/pull/159)
+        -   [github.com/HarshKapadia2/git_basics/pull/83](https://github.com/HarshKapadia2/git_basics/pull/83)
 
 -   Removing credentials
     -   [Windows](https://stackoverflow.com/questions/15381198/remove-credentials-from-git)
