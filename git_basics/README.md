@@ -9,6 +9,7 @@
     -   [PWA](https://harshkapadia2.github.io/git_basics)
     -   [Play Store (TWA)](https://play.google.com/store/apps/details?id=com.harsh_kapadia.git_basics)
 -   Previous **online** talks on this
+    -   [Git Basics for Pesto Tech](https://drive.google.com/file/d/1VLWfAOKq2dRXY4I_t0vKbBy5itjqyVNs/view?usp=sharing) (July 2, 2023)
     -   [The basics of Branching, Issues and Pull Requests for MLH Fellowship](https://youtu.be/LfgDc7BbhaY?t=946) (June 5, 2023)
     -   [Git Basics for GDSC TSEC](https://www.youtube.com/watch?v=OmZHKCg7qf4) (Oct 8, 2021)
     -   [Git and GitHub Workshop for TSEC MAD Club](https://www.youtube.com/watch?v=J8-VT6_HB08) (June 27, 2021)
