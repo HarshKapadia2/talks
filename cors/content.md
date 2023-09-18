@@ -37,6 +37,8 @@
         -   Sub-domains are considered to be different hosts.
     -   Port: 80 (HTTP), 443 (HTTPS), 3000, 5000, 8000, 8080, 9000, etc.
 -   'Same-Origin Request' and 'Cross-Origin Request'
+-	[Don't confuse 'origin' and 'site'!](https://web.dev/same-site-same-origin)
+	-	`same-origin` vs `cross-origin` vs `(schemeful) same-site` vs `schemeless same-site` vs `cross-site`
 
 ## Why is CORS Required?
 
