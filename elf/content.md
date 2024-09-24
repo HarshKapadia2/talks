@@ -108,3 +108,98 @@ The change here mainly pertains to the mapping of shared libraries in the proces
         Image source: <a href="https://www.tenouk.com/ModuleW.html" target="_blank" rel="noreferrer">Compiler, Assembler, Linker and Loader: A Brief Story</a>
     </sub>
 </p>
+
+## The Executable and Linkable Format
+
+The Executable and Linkable Format (ELF) is a format which standardizes and defines the structure in which each type of data in a file should be stored and also defines how the metadata associated with the file should be stored in the file.
+
+The ELF was adopted from UNIX System V and has remained unchanged since the early 2000s, which is impressive!
+
+The Executable and Linkable Format is not just a file format for executables. Some file types that use the ELF:
+
+-   Executable files (binaries)
+-   Object files (relocatable files) (`*.o`)
+-   Shared Object files (`*.so.*`)
+-   Core dump files
+
+Note how the output of the `file` command on an executable file outputs that the file is an 'ELF' file:
+
+```shell
+$ file a.out           # 'a.out' is the default executable file generated on compiling a C program using GCC
+a.out: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=d3f6d6241d69c2e0de9d136fb09190d9175f5171, for GNU/Linux 3.2.0, not stripped
+```
+
+There are two formats of the Executable and Linkable Format:
+
+-   The 32-bit format for CPUs that support 32-bit addressing
+-   The 64-bit format for CPUs that support 64-bit addressing
+
+Most modern machines are 64-bit machines, so this article will mainly look into the 64-bit format. Most things remain the same for the 32-bit format.
+
+## ELF File Structure
+
+<p align="center">
+    <img src="img/elf-file-format-combined.webp" alt="A high level view of the ELF format." width="30%" loading="lazy" />
+	<br />
+    <sub>
+        Image source: <a href="https://subscription.packtpub.com/book/security/9781789610789/14/ch14lvl1sec00/elf-structure" target="_blank" rel="noreferrer">ELF structure</a>
+    </sub>
+</p>
+
+The main parts of an ELF file:
+
+-   File (ELF) Header
+    -   Identifies through 'magic bytes' that the file is an ELF file.
+    -   Identifies which version and type of an ELF file the file is.
+    -   Identifies which machine architecture the file is meant for.
+    -   Provides offsets to the location of section and segment header tables in the file.
+-   Section Headers
+    -   Contain metadata about sections.
+    -   Identify the type and permissions of sections.
+    -   Provide an offset to the location of a section's data in the file.
+-   Segment (Program) Headers
+    -   Contain metadata about segments.
+    -   Identify the type and permissions of segments.
+    -   Provide an offset to the location of a segment's data in the file.
+-   Sections
+    -   Areas that contain data for specific purposes.
+    -   Mainly used by the Linker for Linking and Relocation.
+-   Segments
+    -   Areas that contain data for specific purposes that has to be loaded into specific areas in the process' address space in memory.
+    -   Mainly used by the Loader to load the program into the memory.
+    -   Each segment can have zero, one or more sections. Similar sections are usually clubbed into a segment.
+
+## Views of an ELF File
+
+**The same ELF file** can be looked at in two different ways, depending on the file handler (Linker or Loader):
+
+-   Linking View
+-   Execution View
+
+<p align="center">
+    <img src="img/elf-linking-and-execution-views.png" alt="Linking and Execution views of the same ELF file." loading="lazy" />
+	<br />
+    <sub>
+        Image source: <a href="https://www.tenouk.com/ModuleW.html" target="_blank" rel="noreferrer">Compiler, Assembler, Linker and Loader: A Brief Story</a>
+    </sub>
+</p>
+
+### Linking View of an ELF File
+
+<p align="center">
+    <img src="img/elf-linking-view.png" alt="The Linking View of an ELF file." loading="lazy" />
+	<br />
+    <sub>
+        Image source: <a href="https://www.tenouk.com/ModuleW.html" target="_blank" rel="noreferrer">Compiler, Assembler, Linker and Loader: A Brief Story</a>
+    </sub>
+</p>
+
+### Execution View of an ELF File
+
+<p align="center">
+    <img src="img/elf-execution-view.png" alt="The Execution View of an ELF file." loading="lazy" />
+	<br />
+    <sub>
+        Image source: <a href="https://www.tenouk.com/ModuleW.html" target="_blank" rel="noreferrer">Compiler, Assembler, Linker and Loader: A Brief Story</a>
+    </sub>
+</p>
