@@ -6,6 +6,7 @@ We're going to learn about ELF, the primary executable file format on Linux. We'
 >
 > -   The 64-bit format of ELF is the focus of this talk. Most things remain the same for 32-bit ELFs.
 > -   Discussions will be based around the C programming language.
+> -   [What are the differences between a Program, an Executable, and a Process?](https://stackoverflow.com/questions/12999850/what-are-the-differences-between-a-program-an-executable-and-a-process)
 
 ## Compiling a Program
 
@@ -46,20 +47,25 @@ To load the program into memory, 'Loading' is the process that's undertaken by t
 
 More information on each of the compilation steps and examples to illustrate each can be found at [github.com/HarshKapadia2/compilation-examples](https://github.com/HarshKapadia2/compilation-examples).
 
-## Program Memory Layout
+## Process Memory Layout
 
 The Loader loads a program into memory in a specific manner to execute it.
 
 <p align="center">
-    <img src="img/process-memory-layout-simple.png" alt="The high level view of a process' memory layout." loading="lazy" />
+    <img src="img/process-memory-layout.png" alt="The high level view of a process' memory layout." loading="lazy" />
 	<br />
     <sub>
-        Image source: <a href="https://www.tenouk.com/ModuleW.html" target="_blank" rel="noreferrer">Compiler, Assembler, Linker and Loader: A Brief Story</a>
+        Image source: <a href="https://manybutfinite.com/post/anatomy-of-a-program-in-memory" target="_blank" rel="noreferrer">Anatomy of a Program in Memory</a>
     </sub>
 </p>
 
-At a high level, a process' memory layout consists of
+At a high level, from the top to bottom (virtual address `0x0`) of a process' memory layout, the layout consists of
 
+-   The Kernel
+    -   [Linux is a 'Higher Half Kernel'](https://wiki.osdev.org/Higher_Half_Kernel), i.e., it is always mapped in the higher range of virtual addresses in a process' virtual memory layout, leaving the lower virtual memory addresses for the process.
+        -   [This is mainly done for efficiency/performance reasons.](https://stackoverflow.com/questions/13013491/why-is-kernel-mapped-to-the-same-address-space-as-processes)
+        -   More on virtual memory and address spaces in the note at the end of this section.
+    -   Although the kernel is mapped into the process' address space, the process itself doesn't have the permissions to modify the kernel's pages.
 -   Stack Segment
     -   Is a Stack data structure that maintains the function call order by pushing a stack frame per function call and popping a frame off once the function returns from the call.
     -   On a high level, each stack frame consists of
@@ -70,6 +76,9 @@ At a high level, a process' memory layout consists of
     -   The Stack grows downwards towards the Heap in the process' address space with each frame's addition.
     -   The top of a Stack is pointed to by the Stack Pointer (SP).
     -   Depending on the OS, there might be a configuration parameter to decide the maximum size of the Stack.
+-   Shared Libraries
+    -   If a program is a dynamically linked program, then it might need certain libraries that are Shared Objects. These libraries will be mapped in the unused space between the Stack and Heap segments.
+    -   Static libraries are usually directly placed in the 'Code' segment.
 -   Heap Segment
     -   This is a Heap data structure used to allocate memory during run time, i.e., dynamically or on-the-fly.
     -   This is where variables get memory allocated to them when they request for it through `malloc()`, `calloc()` and the likes.
@@ -86,18 +95,6 @@ At a high level, a process' memory layout consists of
 -   Code Segment
     -   The Code (Text) segment is where the code of the program is stored, usually in machine code format.
     -   The Program Counter (PC) register, also called the Instruction Pointer (IP) register, points to the address of the next instruction to be executed.
-
-A more complex view of a process' memory layout:
-
-<p align="center">
-    <img src="img/process-memory-layout-complex.png" alt="A more detailed view of a process' memory layout." loading="lazy" />
-	<br />
-    <sub>
-        Image source: <a href="https://www.tenouk.com/ModuleW.html" target="_blank" rel="noreferrer">Compiler, Assembler, Linker and Loader: A Brief Story</a>
-    </sub>
-</p>
-
-The change here mainly pertains to the mapping of shared libraries in the process' address space between the Stack and Heap. This is usually happens when some libraries are dynamically linked to a program. (Statically linked libraries usually appear in the 'Code' segment of the process itself.)
 
 **NOTE**: The process' entire memory space appears consecutive and contiguous in the above representation, because that is the virtual address space representation of the memory space of the process. In reality, i.e. in terms of physical location in memory, the mapping for each segment might be in different locations in memory. Virtual addressing only makes the entire process' memory space appear contiguous for various security and convenience reasons.
 

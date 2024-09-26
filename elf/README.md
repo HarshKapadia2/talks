@@ -79,6 +79,7 @@ A program is divided into segments, so that they can fit into memory segments. (
 -   Section Header vs Segment (Program) Header
     -   [What's the difference of section and segment in ELF file format](https://stackoverflow.com/questions/14361248/whats-the-difference-of-section-and-segment-in-elf-file-format)
     -   [Difference between Program header and Section Header in ELF](https://stackoverflow.com/questions/23379880/difference-between-program-header-and-section-header-in-elf)
+    -   [Inside Specs: ELF Segments and Sections](https://dvdhrm.github.io/2020/04/26/inside-specs-elf-segments-and-sections)
     -   [System V ABI for AMD64 v0.99.6](https://refspecs.linuxbase.org/elf/x86_64-abi-0.99.pdf)
         -   Section 5.1 (Program Loading) first paragraph
 -   Background
