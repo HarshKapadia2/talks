@@ -277,3 +277,74 @@ NOTE: It is important to realise that the same file is being looked at in two di
                 -   Used to store the `.text` and the `.rodata` sections.
             -   The Data Segment
                 -   Used to store the `.data` and the `.bss` sections.
+
+## Demonstrations
+
+-   ELF parser that I built: [github.com/HarshKapadia2/parse-elf](https://github.com/HarshKapadia2/parse-elf)
+    -   TODO: Read-only data string literal demo
+        -   TODO: Extracting passwords from binaries
+
+## File Utilities
+
+An important thing to know is the tools available to work with executable files, to be able to examine their contents and gather information about them.
+
+Among other tools, the [GNU Binutils](https://en.wikipedia.org/wiki/GNU_Binutils) is an important collection of tools for working with binaries (executables) maintained by GNU. We will look into a few tools from this collection among others. This list is not exhaustive.
+
+## File Inspection
+
+-   `file`
+    -   Gives information on the file type.
+-   `size`
+    -   Lists the size of binaries and their sections.
+-   `objdump`
+    -   Does a bunch of things.
+    -   Disassemble an executable.
+        -   `objdump -d "/path/to/bin"`
+    -   List data in an ELF section.
+        -   `objdump -s -j ".section-name" "/path/to/bin"`
+-   `readelf`
+    -   Provides detailed information about an ELF file.
+    -   List all metadata.
+        -   `readelf --all "/path/to/bin"`
+    -   List Section Headers.
+        -   `readelf -S "/path/to/bin"`
+    -   List Segment (Program) Headers.
+        -   `readelf -l "/path/to/bin"`
+    -   List the Dynamic Section entry and data.
+        -   `readelf --dynamic "/path/to/bin"`
+-   `ldd`
+    -   List all the dynamic dependencies of an executable.
+    -   Recursively figures out all the dynamic dependencies, because the executable usually only lists the dynamic libraries that it directly depends on. (A dynamic library could have its own dependencies.)
+-   `hexdump` / `xxd`
+    -   Dump (output) the contents of a file in the hexadecimal format along with its ASCII representation.
+    -   Helpful to see the raw contents of a file. Helps with debugging at times.
+-   `strace`
+    -   Provides a trace (path) for all the system calls made by an executable.
+    -   [How many kernel system calls do runtimes make?](https://www.youtube.com/watch?v=ERaGORGfLF4)
+-   `gdb`
+    -   The GNU Debugger
+    -   Extremely useful if one knows how to use it!
+-   `strings`
+    -   Lists all the strings in an executable.
+-   `nm`
+    -   Lists symbols from Object Files.
+-   `ltrace`
+    -   Provides a trace (path) for all the library calls made by an executable.
+
+## File Compilation
+
+-   Compilers like the GNU Compiler Collection (`gcc`) or Clang (LLVM).
+-   Linkers like `ld` or `gold`.
+-   Assemblers like the GNU Assembler (GAS / `as`).
+
+## File Manipulation
+
+-   `strip`
+    -   Removes all symbol information from an ELF file.
+-   Editors like Vim and Nano.
+    -   [My `.vimrc` Vim dotfile](https://github.com/HarshKapadia2/dotfiles)
+-   `dd`
+    -   `dd` stands for 'Copy and Convert'.
+    -   [`cc` stood for 'C Compiler' on some Unix systems, which is why this command was called `dd` instead of `cc`.](https://unix.stackexchange.com/questions/6804/what-does-dd-stand-for)
+-   `chgrp` / `chown` / `chmod`
+    -   Change file group, owner and permissions respectively.
