@@ -171,10 +171,14 @@ The main parts of an ELF file:
 
 ## Views of an ELF File
 
+ELF is an abbreviation for Executable and Linkable Format, which implies that the format it describes has something to do with Execution and Linking.
+
 **The same ELF file** can be looked at in two different ways, depending on the file handler (Linker or Loader):
 
 -   Linking View
 -   Execution View
+
+NOTE: It is important to realise that the same file is being looked at in two different representations. There aren't different files. It's the same file. The same file is just represented differently.
 
 <p align="center">
     <img src="img/elf-linking-and-execution-views.png" alt="Linking and Execution views of the same ELF file." loading="lazy" />
@@ -194,6 +198,52 @@ The main parts of an ELF file:
     </sub>
 </p>
 
+-   This is the view of the ELF file that a Linker sees.
+-   The Linking View mainly consists of
+    -   The ELF (File) Header
+        -   Among other details, the File Header mainly provides the following for this view
+            -   The file offset to the Section Header Table
+            -   The number of Section Headers
+            -   The size of each Section Header
+            -   The index of the 'Section Name String Table' Section Header in the Section Header Table
+    -   The Section Header Table
+        -   This is an area of the file which contains Section Headers.
+    -   Section Headers
+        -   These are fixed sized entries (`structs` in C) that contain metadata about Sections in the file, where the actual data is stored.
+        -   Among other details, a Section Header mainly provides the following information about a Section
+            -   Name
+                -   The header only stores a section offset, i.e. an offset inside the data in a section. The name of the section that stores the names of the sections is 'Section Name String Table'.
+                    -   This is done so that each Section Header can have a fixed size. (Strings can be arbitrarily long.)
+            -   Type
+            -   Permission flags
+            -   File offset
+            -   Size
+    -   Sections
+        -   A section is an area of the file that contains logically similar data with a particular purpose.
+        -   Some important sections and their usage
+            -   `.text`
+                -   The program's code (in Machine Code format) is stored here.
+            -   `.data`
+                -   Initialized statically allocated variables are stored here.
+                -   These variables occupy the statically requested memory in the file.
+            -   `.bss`
+                -   Uninitialized statically allocated variables are stored here.
+                -   These variables occupy no space in the file other than the space required to describe the variable itself, i.e., the variable's metadata.
+            -   `.rodata`
+                -   Read-only data like string literals are stored here.
+            -   `.shstrtab`
+                -   This is the 'Section Header String Table' section that holds the strings of names of all the sections.
+                -   The `elf64_shdr->name` structure member holds relative offsets into the data in this section.
+            -   `.dynstr`
+                -   This is similar to the 'Section Header String Table', but it stores strings of the names of dynamic libraries mentioned in the `.dynamic` section.
+            -   `.dynamic`
+                -   This section holds Dynamic Entries
+                -   Among other things, some of these entries point to names of dynamic libraries that the executable depends on.
+            -   Apart from these, some of the important sections are for symbols and relocation entries.
+            -   `.got`
+                -   The Global Offset Table
+-   This view is required so that the Linker can access the correct symbols (functions, global variables, etc.) in multiple Object Files that it has to resolve from different header files and libraries, and eventually relocate all the data from different libraries and files into a particular order to create one executable.
+
 ### Execution View of an ELF File
 
 <p align="center">
@@ -203,3 +253,30 @@ The main parts of an ELF file:
         Image source: <a href="https://www.tenouk.com/ModuleW.html" target="_blank" rel="noreferrer">Compiler, Assembler, Linker and Loader: A Brief Story</a>
     </sub>
 </p>
+
+-   This view is mainly useful for the Loader when it is supposed to load a program into its process address space in memory.
+    -   The same file is just represented in a different way than [the Linking View](#linking-view-of-an-elf-file).
+-   Please refer to [the 'Process Memory Layout' section](#process-memory-layout) above to know about how a process is structured in memory.
+-   The Execution View mainly consists of
+    -   The ELF (File) Header
+        -   Among other details, the File Header mainly provides the following for this view
+            -   The file offset to the Segment Header Table
+            -   The number of Segment Headers
+            -   The size of each Segment Header
+    -   The Segment Header Table
+        -   This is an area of the file which contains Segment Headers.
+    -   Segment Headers
+        -   These are fixed sized entries (`structs` in C) that contain metadata about Segments in the file, where the actual data is stored.
+        -   Among other details, a Segment Header mainly provides the following information about a Segment
+            -   Type
+            -   Permission flags
+                -   They decide whether the segment needs to be loaded into memory or not.
+            -   File offset
+            -   Size
+    -   Segments
+        -   A segment is a collection of related sections.
+        -   Some important segments and their usage
+            -   The Code (Text) Segment
+                -   Used to store the `.text` and the `.rodata` sections.
+            -   The Data Segment
+                -   Used to store the `.data` and the `.bss` sections.
