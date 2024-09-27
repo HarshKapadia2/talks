@@ -1,5 +1,24 @@
 # Executable and Linkable Format
 
+## Table of Contents
+
+-   [Introduction](#introduction)
+-   [Compiling a Program](#compiling-a-program)
+-   [Process Memory Layout](#process-memory-layout)
+-   [The Executable and Linkable Format](#the-executable-and-linkable-format)
+-   [ELF File Structure](#elf-file-structure)
+-   [Views of an ELF File](#views-of-an-elf-file)
+    -   [Linking View of an ELF File](#linking-view-of-an-elf-file)
+    -   [Execution View of an ELF File](#execution-view-of-an-elf-file)
+-   [Demonstrations](#demonstrations)
+-   [File Utilities](#file-utilities)
+    -   [File Inspection](#file-inspection)
+    -   [File Compilation](#file-compilation)
+    -   [File Manipulation](#file-manipulation)
+-   [Resources](#resources)
+
+## Introduction
+
 We're going to learn about ELF, the primary executable file format on Linux. We're going to explore its format and look into a few examples using an ELF parser that I built. We're also going to look into utilities to inspect binaries. To get started with ELFs, though, we need some high level knowledge on how programs are compiled and loaded into memory (RAM).
 
 > NOTE:
