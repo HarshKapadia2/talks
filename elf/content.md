@@ -110,7 +110,7 @@ At a high level, from the top to bottom (virtual address `0x0`) of a process' me
 
 The Executable and Linkable Format (ELF) is a format which standardizes and defines the structure in which each type of data in a file should be stored and also defines how the metadata associated with the file should be stored in the file.
 
-The ELF was adopted from UNIX System V and has remained unchanged since the early 2000s, which is impressive!
+The ELF was adopted from UNIX System V and has remained unchanged since the early 2000s, which is impressive! ELF initially stood for 'Extensible Linking Format'.
 
 The Executable and Linkable Format is not just a file format for executables. Some file types that use the ELF:
 
@@ -290,7 +290,7 @@ An important thing to know is the tools available to work with executable files,
 
 Among other tools, the [GNU Binutils](https://en.wikipedia.org/wiki/GNU_Binutils) is an important collection of tools for working with binaries (executables) maintained by GNU. We will look into a few tools from this collection among others. This list is not exhaustive.
 
-## File Inspection
+### File Inspection
 
 -   `file`
     -   Gives information on the file type.
@@ -331,13 +331,13 @@ Among other tools, the [GNU Binutils](https://en.wikipedia.org/wiki/GNU_Binutils
 -   `ltrace`
     -   Provides a trace (path) for all the library calls made by an executable.
 
-## File Compilation
+### File Compilation
 
 -   Compilers like the GNU Compiler Collection (`gcc`) or Clang (LLVM).
 -   Linkers like `ld` or `gold`.
 -   Assemblers like the GNU Assembler (GAS / `as`).
 
-## File Manipulation
+### File Manipulation
 
 -   `strip`
     -   Removes all symbol information from an ELF file.
@@ -348,3 +348,38 @@ Among other tools, the [GNU Binutils](https://en.wikipedia.org/wiki/GNU_Binutils
     -   [`cc` stood for 'C Compiler' on some Unix systems, which is why this command was called `dd` instead of `cc`.](https://unix.stackexchange.com/questions/6804/what-does-dd-stand-for)
 -   `chgrp` / `chown` / `chmod`
     -   Change file group, owner and permissions respectively.
+
+## Resources
+
+-   [Becoming an Elf-Lord](https://cpu.land/becoming-an-elf-lord)
+-   [In-depth: ELF - The Extensible & Linkable Format](https://www.youtube.com/watch?v=nC1U1LJQL8o)
+-   [Wikipedia: Executable and Linkable Format](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format)
+-   [ELF Magic - Digging Deeper into an ELF Binary on Linux](https://www.youtube.com/watch?v=cS5NzTZRKCM)
+-   Documentation
+    -   [ELF Linux manual page](https://www.man7.org/linux/man-pages/man5/elf.5.html) (`man 5 elf` or `man elf`)
+    -   [System V ABI (Generic)](https://refspecs.linuxfoundation.org/elf/gabi41.pdf)
+    -   [AMD64 System V ABI (Processor-Specific)](https://gitlab.com/x86-psABIs/x86-64-ABI)
+    -   [ELF-64 Object File Format](https://uclibc.org/docs/elf-64-gen.pdf)
+    -   [Oracle Solaris 11 Linker and Libraries Guide: ELF Application Binary Interface](https://docs.oracle.com/cd/E23824_01/html/819-0690/glcfv.html)
+-   UIC CS 361 Systems Programming
+    -   [Executable Linkers are basically just home theater setups](https://www.youtube.com/watch?v=eQ0KOT_J8Sk&list=PLhy9gU5W1fvUND_5mdpbNVHC1WCIaABbP&index=9)
+    -   [How do linkers resolve symbols?](https://www.youtube.com/watch?v=6XVUIeAaROU&list=PLhy9gU5W1fvUND_5mdpbNVHC1WCIaABbP&index=10)
+    -   [Linux Executable Symbol Relocation Explained](https://www.youtube.com/watch?v=E804eTETaQs&list=PLhy9gU5W1fvUND_5mdpbNVHC1WCIaABbP&index=11)
+    -   [What's so good about dynamic linking anyway?](https://www.youtube.com/watch?v=l8oIupRzahU&list=PLhy9gU5W1fvUND_5mdpbNVHC1WCIaABbP&index=12)
+    -   [PIC GOT PLT OMG: how does the procedure linkage table work in linux?](https://www.youtube.com/watch?v=Ss2e6JauS0Y&list=PLhy9gU5W1fvUND_5mdpbNVHC1WCIaABbP&index=13)
+-   Section Header vs Segment (Program) Header
+    -   [What's the difference of section and segment in ELF file format](https://stackoverflow.com/questions/14361248/whats-the-difference-of-section-and-segment-in-elf-file-format)
+    -   [Difference between Program header and Section Header in ELF](https://stackoverflow.com/questions/23379880/difference-between-program-header-and-section-header-in-elf)
+    -   [Inside Specs: ELF Segments and Sections](https://dvdhrm.github.io/2020/04/26/inside-specs-elf-segments-and-sections)
+    -   [System V ABI for AMD64 v0.99.6](https://refspecs.linuxbase.org/elf/x86_64-abi-0.99.pdf)
+        -   Section 5.1 (Program Loading) first paragraph
+-   [ELF Format and Runtime Internals](https://blog.k3170makan.com/p/series.html#:~:text=ELF%20Format%20and%20Runtime%20Internals)
+-   [String Table Section](https://docs.oracle.com/cd/E23824_01/html/819-0690/chapter6-73709.html)
+-   Background
+    -   [Memory Layout and Compilers](https://linux.harshkapadia.me/#memory-layout-and-compilers)
+-   File utilities
+    -   [How to Inspect Compiled Binaries (`binutils`, `objdump`)](https://www.youtube.com/watch?v=bWMIpHVRFUo)
+    -   [10 ways to analyze binary files on Linux](https://opensource.com/article/20/4/linux-binary-analysis)
+-   Fat Binaries
+    -   [Wikipedia: Fat Binary](https://en.wikipedia.org/wiki/Fat_binary)
+    -   [FatELF: universal binaries for Linux](https://lwn.net/Articles/359070)
