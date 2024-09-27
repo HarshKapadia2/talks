@@ -197,6 +197,7 @@ NOTE: It is important to realise that the same file is being looked at in two di
 
 -   This is the view of the ELF file that a Linker sees.
 -   The Linking View mainly consists of
+
     -   The ELF (File) Header
         -   Among other details, the File Header mainly provides the following for this view
             -   The file offset to the Section Header Table
@@ -206,15 +207,28 @@ NOTE: It is important to realise that the same file is being looked at in two di
     -   The Section Header Table
         -   This is an area of the file which contains Section Headers.
     -   Section Headers
+
         -   These are fixed sized entries (`structs` in C) that contain metadata about Sections in the file, where the actual data is stored.
         -   Among other details, a Section Header mainly provides the following information about a Section
+
             -   Name
-                -   The header only stores a section offset, i.e. an offset inside the data in a section. The name of the section that stores the names of the sections is 'Section Name String Table'.
-                    -   This is done so that each Section Header can have a fixed size. (Strings can be arbitrarily long.)
+
+                -   The header only stores a section offset, i.e. an offset inside the data in a section. The name of the section that stores the names of the sections is 'Section Name String Table'. This is done so that each Section Header can have a fixed size. (Strings can be arbitrarily long.)
+
+                    <p>
+                        <img src="img/string-table.png" alt="The String Table Section in an ELF file." loading="lazy" />
+                        <br />
+                        <sub>
+                            <a href="https://docs.oracle.com/cd/E23824_01/html/819-0690/chapter6-73709.html" target="_blank" rel="noreferrer">'String Table Section' from the Oracle Solaris 11 Linker and Libraries Guide</a>
+                        </sub>
+
+                    </p>
+
             -   Type
             -   Permission flags
             -   File offset
             -   Size
+
     -   Sections
         -   A section is an area of the file that contains logically similar data with a particular purpose.
         -   Some important sections and their usage
@@ -239,6 +253,7 @@ NOTE: It is important to realise that the same file is being looked at in two di
             -   Apart from these, some of the important sections are for symbols and relocation entries.
             -   `.got`
                 -   The Global Offset Table
+
 -   This view is required so that the Linker can access the correct symbols (functions, global variables, etc.) in multiple Object Files that it has to resolve from different header files and libraries, and eventually relocate all the data from different libraries and files into a particular order to create one executable.
 
 ### Execution View of an ELF File
