@@ -1,88 +1,30 @@
 # ELF
 
-## Introduction
+## Talk Details
 
--   ELF files are the primary executable files on Linux. This talk explores the ELF format, how they are stored on disk and loaded in memory for execution, and how one can inspect files on Linux. We will also see a rudimentary ELF parser that I built in C.
--   Duration: TBD
--   Slide deck: https://docs.google.com/presentation/d/1eg9I7QjBU7qpKB5SjjtL9XVD_ZLqB6XsTiiIGP2uZms/edit?usp=sharing
+-   Abstract: Executable and Linkable Format (ELF) files are the primary executable files on Linux. This talk explores the format defined by ELF, the two views of an ELF file (the Execution View and the Linking View), and how one can inspect files on Linux. Additionally, we will see a rudimentary ELF parser that I built in C and explore all the compilation steps (Preprocessing, Compilation, Assembling and Linking) to generate an ELF file.
+-   Duration: 1.5 hours, but can be modified depending on the available time.
+-   ❗ [**Talk content**](content.md)
+    -   The [Table of Contents](content.md#table-of-contents) is the talk agenda.
+-   [Slide deck](https://docs.google.com/presentation/d/1eg9I7QjBU7qpKB5SjjtL9XVD_ZLqB6XsTiiIGP2uZms/edit?usp=sharing)
+-   [parse-elf](https://github.com/HarshKapadia2/parse-elf)
+-   [compilation-examples](https://github.com/HarshKapadia2/compilation-examples)
 
 ## Motivation
 
-Why should one learn about ELFs?
+Why should one learn about ELFs, process memory layout, compilation steps and file utilities?
 
--   Most commonly used executable format on Linux-based OSs
-    -   What are some other executable formats on Linux?
--   Helps in getting comfortable with working with files.
--   Helps in understanding how programs are loaded into memory and executed.
+-   ELF is the standard executable file format on Linux-based OSs.
+-   Fundamentals
+    -   Learning about files, process memory layout and compilation steps are fundamental Operating Systems concepts.
+    -   Knowing more about the fundamentals makes it easier to build better software because of the additional context one gets.
+-   Cybersecurity
+    -   To carry out or defend against binary exploitation, it is important to know
+        -   How information is structured. (ELF file format and its views.)
+        -   How to examine files to check for issues and figure out details about the binary/executable. (File utilities)
+-   Debugging
+    -   Learning about the basics of Symbols helps understand how Debuggers (like `gdb`) are able to work with executables.
 
-## Goal
+## Upcoming Talks
 
--   Understand the ELF format.
--   Get comfortable with examining files.
--   Get more comfortable with C.
--   Understand the memory model of files and how they are loaded into memory.
--   Learn how the compiler understands the dynamic libraries to be linked.
-
-## High-Level Agenda
-
--   ELF format
--   ELF parser
--   Examining ELF files
--   Building an ELF file
-
-## ELF Format
-
-> We will only talk about the 64-bit ELF format and not the 32-bit ELF format.
-
--   Section vs Segment
-    -   Sections describe files from a linking/static perspective for the Linker, while segments describe the file from a runtime/execution view for the OS.
-    -   Each byte in a file can belong to zero or one section.
-    -   A segment can contain zero or more sections.
--   File Header
-    -   Optional?
--   Segment (Program) Header
-    -   Optional?
--   Section Header
-    -   Optional?
--   Dynamic linking
-    -   Archive (`.a`) vs Shared Object (`.so`) files
-
-### Sections and Segments
-
-#### Need for Sections in ELFs
-
-They describe different types of areas in an ELF that are used for different purposes. Each section contains data for a particular function. They help the linker understand
-
-#### Need for Segments in ELFs
-
-Memory is divided into segments. (Why?)
-
-A program is divided into segments, so that they can fit into memory segments. (Are these physical memory segments or virtual memory segments?)
-
-## ELF Demos
-
--   ELF parser: [github.com/HarshKapadia2/parse-elf](https://github.com/HarshKapadia2/parse-elf)
--   Read-only data string literal demo
--   Extracting passwords from binaries
-
-## Examining ELF Files
-
--   `size -d`
-
-## Building an ELF File
-
-## Resources
-
--   [Becoming an Elf-Lord](https://cpu.land/becoming-an-elf-lord)
--   [In-depth: ELF - The Extensible & Linkable Format](https://www.youtube.com/watch?v=nC1U1LJQL8o)
--   [Wikipedia: Executable and Linkable Format](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format)
--   Section Header vs Segment (Program) Header
-    -   [What's the difference of section and segment in ELF file format](https://stackoverflow.com/questions/14361248/whats-the-difference-of-section-and-segment-in-elf-file-format)
-    -   [Difference between Program header and Section Header in ELF](https://stackoverflow.com/questions/23379880/difference-between-program-header-and-section-header-in-elf)
-    -   [Inside Specs: ELF Segments and Sections](https://dvdhrm.github.io/2020/04/26/inside-specs-elf-segments-and-sections)
-    -   [System V ABI for AMD64 v0.99.6](https://refspecs.linuxbase.org/elf/x86_64-abi-0.99.pdf)
-        -   Section 5.1 (Program Loading) first paragraph
--   Background
-    -   [Memory Layout and Compilers](https://linux.harshkapadia.me/#memory-layout-and-compilers)
--   ELF utilities
-    -   [How to Inspect Compiled Binaries (`binutils`, `objdump`)](https://www.youtube.com/watch?v=bWMIpHVRFUo)
+-   'All About ELFs' at [OTC Talks #6](https://talks.ourtech.community/6) (September 28, 2024)
