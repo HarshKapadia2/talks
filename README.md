@@ -6,6 +6,7 @@ Feel free to [reach out](https://links.harshkapadia.me) for talks, interviews, p
 
 ## Previous Talks
 
+-   [Executable and Linkable Format (ELF) Files on Linux](elf)
 -   [MAC and IP Routing](mac-and-ip-routing)
 -   [Git Internals - How Does Git Work!?](git_internals)
 -   [Git Basics - The Basics of Git and GitHub!](git_basics)
@@ -13,7 +14,6 @@ Feel free to [reach out](https://links.harshkapadia.me) for talks, interviews, p
 
 ## Planned Talks
 
--   [All about ELFs](elf)
 -   [Working with CORS](cors)
 -   [Team Attitude for Organising a Hackathon](hackathon-team-attitude)
 
