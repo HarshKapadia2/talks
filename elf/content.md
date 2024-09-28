@@ -9,7 +9,9 @@
 -   [ELF File Structure](#elf-file-structure)
 -   [Views of an ELF File](#views-of-an-elf-file)
     -   [Linking View of an ELF File](#linking-view-of-an-elf-file)
+        -   [Exploring ELF Sections](#exploring-elf-sections)
     -   [Execution View of an ELF File](#execution-view-of-an-elf-file)
+        -   [Exploring ELF Segments](#exploring-elf-segments)
 -   [Demonstrations](#demonstrations)
 -   [File Utilities](#file-utilities)
     -   [File Inspection](#file-inspection)
@@ -138,12 +140,37 @@ The Executable and Linkable Format is not just a file format for executables. So
 -   Shared Object files (`*.so.*`)
 -   Core dump files
 
-Note how the output of the `file` command on an executable file outputs that the file is an 'ELF' file:
+The following images show the output of the `file` command on various types of ELF files.
 
-```shell
-$ file a.out           # 'a.out' is the default executable file generated on compiling a C program using GCC
-a.out: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=d3f6d6241d69c2e0de9d136fb09190d9175f5171, for GNU/Linux 3.2.0, not stripped
-```
+<p align="center">
+    <img src="img/elf-file-types-1.png" alt="ELF file types." width="80%" loading="lazy" />
+	<br />
+    <sub>
+		1. 64-bit unstripped dynamically linked ELF executable for the x86-64 architecture
+		<br />
+		2. 64-bit stripped dynamically linked ELF executable for the x86-64 architecture
+		<br />
+		3. 64-bit unstripped statically linked ELF executable for the x86-64 architecture
+		<br />
+		4. 64-bit unstripped dynamically linked ELF executable for the RISC-V architecture
+		<br />
+        Image credits: Harsh Kapadia (me)
+    </sub>
+</p>
+
+<p align="center">
+    <img src="img/elf-file-types-2.png" alt="ELF file types." width="80%" loading="lazy" />
+	<br />
+    <sub>
+		1. 64-bit stripped dynamically linked ELF shared object for the x86-64 architecture
+		<br />
+		2. 64-bit unstripped ELF object (relocatable) file for the x86-64 architecture
+		<br />
+		3. 64-bit ELF core (dump) file for the x86-64 architecture
+		<br />
+        Image credits: Harsh Kapadia (me)
+    </sub>
+</p>
 
 There are two formats of the Executable and Linkable Format:
 
@@ -275,6 +302,114 @@ NOTE: It is important to realise that the same file is being looked at in two di
 
 -   This view is required so that the Linker can access the correct symbols (functions, global variables, etc.) in multiple Object Files that it has to resolve from different header files and libraries, and eventually relocate all the data from different libraries and files into a particular order to create one executable.
 
+#### Exploring ELF Sections
+
+The original file (`hello.c`):
+
+```c
+#include <stdio.h>
+
+int main() {
+    printf("Hello World!\n");
+
+    return 0;
+}
+
+```
+
+The above code is compiled using GCC to produce the `a.out` ELF executable file that will be examined below.
+
+```shell
+$ gcc hello.c
+# Produces 'a.out' as its output. This is an ELF executable file.
+```
+
+The Section Header Table of the compiled executable:
+
+```shell
+$ readelf -S a.out
+There are 29 section headers, starting at offset 0x3148:
+
+Section Headers:
+  [Nr] Name              Type             Address           Offset
+       Size              EntSize          Flags  Link  Info  Align
+  [ 0]                   NULL             0000000000000000  00000000
+       0000000000000000  0000000000000000           0     0     0
+  [ 1] .interp           PROGBITS         0000000000000318  00000318
+       000000000000001c  0000000000000000   A       0     0     1
+  [ 2] .note.gnu.pr[...] NOTE             0000000000000338  00000338
+       0000000000000030  0000000000000000   A       0     0     8
+  [ 3] .note.gnu.bu[...] NOTE             0000000000000368  00000368
+       0000000000000024  0000000000000000   A       0     0     4
+  [ 4] .note.ABI-tag     NOTE             000000000000038c  0000038c
+       0000000000000020  0000000000000000   A       0     0     4
+  [ 5] .gnu.hash         GNU_HASH         00000000000003b0  000003b0
+       0000000000000024  0000000000000000   A       6     0     8
+  [ 6] .dynsym           DYNSYM           00000000000003d8  000003d8
+       00000000000000a8  0000000000000018   A       7     1     8
+  [ 7] .dynstr           STRTAB           0000000000000480  00000480
+       000000000000008d  0000000000000000   A       0     0     1
+  [ 8] .gnu.version      VERSYM           000000000000050e  0000050e
+       000000000000000e  0000000000000002   A       6     0     2
+  [ 9] .gnu.version_r    VERNEED          0000000000000520  00000520
+       0000000000000030  0000000000000000   A       7     1     8
+  [10] .rela.dyn         RELA             0000000000000550  00000550
+       00000000000000c0  0000000000000018   A       6     0     8
+  [11] .rela.plt         RELA             0000000000000610  00000610
+       0000000000000018  0000000000000018  AI       6    24     8
+  [12] .init             PROGBITS         0000000000001000  00001000
+       000000000000001b  0000000000000000  AX       0     0     4
+  [13] .plt              PROGBITS         0000000000001020  00001020
+       0000000000000020  0000000000000010  AX       0     0     16
+  [14] .plt.got          PROGBITS         0000000000001040  00001040
+       0000000000000010  0000000000000010  AX       0     0     16
+  [15] .plt.sec          PROGBITS         0000000000001050  00001050
+       0000000000000010  0000000000000010  AX       0     0     16
+  [16] .text             PROGBITS         0000000000001060  00001060
+       0000000000000107  0000000000000000  AX       0     0     16
+  [17] .fini             PROGBITS         0000000000001168  00001168
+       000000000000000d  0000000000000000  AX       0     0     4
+  [18] .rodata           PROGBITS         0000000000002000  00002000
+       0000000000000011  0000000000000000   A       0     0     4
+  [19] .eh_frame_hdr     PROGBITS         0000000000002014  00002014
+       0000000000000034  0000000000000000   A       0     0     4
+  [20] .eh_frame         PROGBITS         0000000000002048  00002048
+       00000000000000ac  0000000000000000   A       0     0     8
+  [21] .init_array       INIT_ARRAY       0000000000003db8  00002db8
+       0000000000000008  0000000000000008  WA       0     0     8
+  [22] .fini_array       FINI_ARRAY       0000000000003dc0  00002dc0
+       0000000000000008  0000000000000008  WA       0     0     8
+  [23] .dynamic          DYNAMIC          0000000000003dc8  00002dc8
+       00000000000001f0  0000000000000010  WA       7     0     8
+  [24] .got              PROGBITS         0000000000003fb8  00002fb8
+       0000000000000048  0000000000000008  WA       0     0     8
+  [25] .data             PROGBITS         0000000000004000  00003000
+       0000000000000010  0000000000000000  WA       0     0     8
+  [26] .bss              NOBITS           0000000000004010  00003010
+       0000000000000008  0000000000000000  WA       0     0     1
+  [27] .comment          PROGBITS         0000000000000000  00003010
+       000000000000002b  0000000000000001  MS       0     0     1
+  [28] .shstrtab         STRTAB           0000000000000000  0000303b
+       000000000000010a  0000000000000000           0     0     1
+Key to Flags:
+  W (write), A (alloc), X (execute), M (merge), S (strings), I (info),
+  L (link order), O (extra OS processing required), G (group), T (TLS),
+  C (compressed), x (unknown), o (OS specific), E (exclude),
+  D (mbind), l (large), p (processor specific)
+```
+
+The contents of the `.rodata` section:
+
+```shell
+$ objdump -sj ".rodata" a.out
+
+a.out:     file format elf64-x86-64
+
+Contents of section .rodata:
+ 2000 01000200 48656c6c 6f20576f 726c6421  ....Hello World!
+ 2010 00                                   .
+```
+
 ### Execution View of an ELF File
 
 <p align="center">
@@ -311,6 +446,67 @@ NOTE: It is important to realise that the same file is being looked at in two di
                 -   Used to store the `.text` and the `.rodata` sections.
             -   The Data Segment
                 -   Used to store the `.data` and the `.bss` sections.
+
+#### Exploring ELF Segments
+
+Using the executable generated in [the 'Exploring ELF Sections' section](#exploring-elf-sections) above.
+
+The Segment Header Table of the compiled executable with the mapping of Sections to Segments:
+
+```shell
+$ readelf -l a.out
+
+Elf file type is DYN (Position-Independent Executable file)
+Entry point 0x1060
+There are 13 program headers, starting at offset 64
+
+Program Headers:
+  Type           Offset             VirtAddr           PhysAddr
+                 FileSiz            MemSiz              Flags  Align
+  PHDR           0x0000000000000040 0x0000000000000040 0x0000000000000040
+                 0x00000000000002d8 0x00000000000002d8  R      0x8
+  INTERP         0x0000000000000318 0x0000000000000318 0x0000000000000318
+                 0x000000000000001c 0x000000000000001c  R      0x1
+      [Requesting program interpreter: /lib64/ld-linux-x86-64.so.2]
+  LOAD           0x0000000000000000 0x0000000000000000 0x0000000000000000
+                 0x0000000000000628 0x0000000000000628  R      0x1000
+  LOAD           0x0000000000001000 0x0000000000001000 0x0000000000001000
+                 0x0000000000000175 0x0000000000000175  R E    0x1000
+  LOAD           0x0000000000002000 0x0000000000002000 0x0000000000002000
+                 0x00000000000000f4 0x00000000000000f4  R      0x1000
+  LOAD           0x0000000000002db8 0x0000000000003db8 0x0000000000003db8
+                 0x0000000000000258 0x0000000000000260  RW     0x1000
+  DYNAMIC        0x0000000000002dc8 0x0000000000003dc8 0x0000000000003dc8
+                 0x00000000000001f0 0x00000000000001f0  RW     0x8
+  NOTE           0x0000000000000338 0x0000000000000338 0x0000000000000338
+                 0x0000000000000030 0x0000000000000030  R      0x8
+  NOTE           0x0000000000000368 0x0000000000000368 0x0000000000000368
+                 0x0000000000000044 0x0000000000000044  R      0x4
+  GNU_PROPERTY   0x0000000000000338 0x0000000000000338 0x0000000000000338
+                 0x0000000000000030 0x0000000000000030  R      0x8
+  GNU_EH_FRAME   0x0000000000002014 0x0000000000002014 0x0000000000002014
+                 0x0000000000000034 0x0000000000000034  R      0x4
+  GNU_STACK      0x0000000000000000 0x0000000000000000 0x0000000000000000
+                 0x0000000000000000 0x0000000000000000  RW     0x10
+  GNU_RELRO      0x0000000000002db8 0x0000000000003db8 0x0000000000003db8
+                 0x0000000000000248 0x0000000000000248  R      0x1
+
+ Section to Segment mapping:
+  Segment Sections...
+   00
+   01     .interp
+   02     .interp .note.gnu.property .note.gnu.build-id .note.ABI-tag .gnu.hash .dynsym .dynstr .gnu.version .gnu.version_r .rela.dyn .rela.plt
+   03     .init .plt .plt.got .plt.sec .text .fini
+   04     .rodata .eh_frame_hdr .eh_frame
+   05     .init_array .fini_array .dynamic .got .data .bss
+   06     .dynamic
+   07     .note.gnu.property
+   08     .note.gnu.build-id .note.ABI-tag
+   09     .note.gnu.property
+   10     .eh_frame_hdr
+   11
+   12     .init_array .fini_array .dynamic .got
+```
 
 ## Demonstrations
 
