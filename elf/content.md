@@ -47,7 +47,7 @@ To execute a program, we usually do the following:
 
 The `a.out` file generated after compilation, as shown in the above image, is an ELF file.
 
-In reality, there is a lot going on on the backend for each step in the above image.
+In reality, there is a lot going on in the backend for each step in the above image.
 
 To compile a program, i.e., to create an executable binary, the high level steps are:
 
@@ -513,6 +513,7 @@ Program Headers:
 -   ELF parser that I built: [github.com/HarshKapadia2/parse-elf](https://github.com/HarshKapadia2/parse-elf)
     -   TODO: Read-only data string literal demo
         -   TODO: Extracting passwords from binaries
+        -   TODO: [Why do I get a segmentation fault when writing to a "char \*s" initialized with a string literal, but not "char s[]"?](https://stackoverflow.com/questions/164194/why-do-i-get-a-segmentation-fault-when-writing-to-a-char-s-initialized-with-a)
 
 ## File Utilities
 
