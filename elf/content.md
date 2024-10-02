@@ -606,11 +606,14 @@ Among other tools, the [GNU Binutils](https://en.wikipedia.org/wiki/GNU_Binutils
         -   Section 5.1 (Program Loading) first paragraph
 -   [ELF Format and Runtime Internals](https://blog.k3170makan.com/p/series.html#:~:text=ELF%20Format%20and%20Runtime%20Internals)
 -   [String Table Section](https://docs.oracle.com/cd/E23824_01/html/819-0690/chapter6-73709.html)
--   Background
+-   Prerequisite background
     -   [Memory Layout and Compilers](https://linux.harshkapadia.me/#memory-layout-and-compilers)
 -   File utilities
     -   [How to Inspect Compiled Binaries (`binutils`, `objdump`)](https://www.youtube.com/watch?v=bWMIpHVRFUo)
     -   [10 ways to analyze binary files on Linux](https://opensource.com/article/20/4/linux-binary-analysis)
--   Fat Binaries
+-   ELF history (Credits: [Siddharth Bhatia](https://github.com/Welding-Torch))
+    -   [Evolution of the ELF object file format](https://maskray.me/blog/2024-05-26-evolution-of-elf-object-file-format)
+    -   [Exploring object file formats](https://maskray.me/blog/2024-01-14-exploring-object-file-formats)
+-   Fat Binaries (Credits: [Pranav Dani](https://pranavdani.com))
     -   [Wikipedia: Fat Binary](https://en.wikipedia.org/wiki/Fat_binary)
     -   [FatELF: universal binaries for Linux](https://lwn.net/Articles/359070)
