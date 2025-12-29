@@ -7,6 +7,7 @@ Feel free to [reach out](https://links.harshkapadia.me) for talks, interviews, p
 ## Previous Talks
 
 -   [Executable and Linkable Format (ELF) Files on Linux](elf)
+-   [Implementing High Availability for MAAS-based Automated OS Installs](ha-os)
 -   [MAC and IP Routing](mac-and-ip-routing)
 -   [Git Internals - How Does Git Work!?](git_internals)
 -   [Git Basics - The Basics of Git and GitHub!](git_basics)
